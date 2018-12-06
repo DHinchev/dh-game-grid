@@ -242,4 +242,9 @@ html {
     .grid-view {
         grid-template-rows: ($core-grid-unit * 31) ($core-grid-unit * 27.5) ($core-grid-unit * 27.5) ($core-grid-unit * 27.5);
     }
+
+    .game-item-thumnnail {
+        width: 100%;
+        height: 50%;
+    }
 }
