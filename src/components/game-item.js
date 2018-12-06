@@ -10,7 +10,7 @@ import React, { Component } from 'react';
         render() {
             const {image, title, id} = this.props;
             return (
-                <div className={`game-item${id}`} onClick={this.clickEventViewHandler} data-index={id}>
+                <div className={`game game-item${id}`} onClick={this.clickEventViewHandler} data-index={id}>
                     <img 
                         className='item game-item-thumnnail'
                         data-index={id}

@@ -48,6 +48,7 @@ html {
 
 .grid-view {
     width: 90%;
+    max-width: 1478px;
     height: 768px;
     padding: 0;
     margin-top: $core-grid-unit * 3;
@@ -200,6 +201,18 @@ html {
             "r";
     }
 
+    .game-item1 .game-item-thumnnail {
+        width: 100%;
+    }
+
+    .game-item-thumnnail {
+        width: 70%;
+    }
+
+    .game {
+        text-align: center;
+    }
+
     .close-icon {
         top: $core-grid-unit * 32;
     }
@@ -213,6 +226,10 @@ html {
 
     .active-item-icon {
         margin-bottom: $core-grid-unit * 5;
+    }
+
+    .game-item-thumnnail {
+        width: 100%;
     }
 }
 
