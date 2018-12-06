@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import GridView from './components/grid-view';
 import GridTitle from './components/grid-title';
 import ActiveItemView from './components/active-item';
-import './styles/games-grid.css';
+import './styles/games-grid.min.css';
 import Data from './assets/games-data.json';
 
 class App extends Component {
