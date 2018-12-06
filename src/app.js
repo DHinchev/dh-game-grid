@@ -7,7 +7,7 @@ import Data from './assets/games-data.json';
 
 class App extends Component {
 
-  constructor() {
+constructor() {
     super();
     this.state = {
       openActiveItem: false,
@@ -30,7 +30,7 @@ class App extends Component {
   }
 
   render() {
-    const {openActiveItem} = this.state;
+    const {openActiveItem, activeItemIndex} = this.state;
 
     if (openActiveItem === false) {
       return (
@@ -44,7 +44,7 @@ class App extends Component {
     if (openActiveItem) {
       return (
         <div className='app'>
-          <ActiveItemView data={Data} activeItemIndex={this.state.activeItemIndex} handleItemClick={this.closeActiveView} />
+          <ActiveItemView data={Data} activeItemIndex={activeItemIndex} handleItemClick={this.closeActiveView} />
         </div>
       );
     }
