@@ -126,7 +126,7 @@ html {
     flex-wrap: wrap;
     grid-area: x;
 
-    .game-item-thumnnail {
+    .game-item-thumbnail {
         height: 86%;
     }
 }
@@ -160,19 +160,23 @@ html {
     text-align: center;
 }
 
-.game-item-thumnnail {
+.game-item-thumbnail {
     width: 100%;
     height: 70%;
     border: $border;
 }
 
-.game-item-thumnnail:hover,
+.game-item-thumbnail:hover,
 .game-item-name:hover {
     cursor: pointer;
 }
 
 .game {
     display: block;
+
+    a {
+        text-decoration: none;
+    }
 }
 
 @media only screen and (max-width: 915px) {
@@ -205,11 +209,11 @@ html {
             "r";
     }
 
-    .game-item1 .game-item-thumnnail {
+    .game-item1 .game-item-thumbnail {
         width: 100%;
     }
 
-    .game-item-thumnnail {
+    .game-item-thumbnail {
         width: 70%;
     }
 
@@ -232,7 +236,7 @@ html {
         margin-bottom: $core-grid-unit * 5;
     }
 
-    .game-item-thumnnail {
+    .game-item-thumbnail {
         width: 100%;
         height: 80%;
     }
@@ -243,7 +247,7 @@ html {
         grid-template-rows: ($core-grid-unit * 31) ($core-grid-unit * 27.5) ($core-grid-unit * 27.5) ($core-grid-unit * 27.5);
     }
 
-    .game-item-thumnnail {
+    .game-item-thumbnail {
         width: 100%;
         height: 50%;
     }

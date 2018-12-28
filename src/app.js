@@ -1,53 +1,27 @@
 import React, { Component } from 'react';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import GridView from './components/grid-view';
-import GridTitle from './components/grid-title';
 import ActiveItemView from './components/active-item';
 import './styles/games-grid.min.css';
 import Data from './assets/games-data.json';
 
 class App extends Component {
 
-constructor() {
-    super();
-    this.state = {
-      openActiveItem: false,
-      activeItemIndex: null
-    };
-} 
-
   handleItemClick = (e) => {
-    this.setState({
-      openActiveItem: true,
-      activeItemIndex: e.target.dataset.index - 1
-    });
-  }
-
-  closeActiveView = () => {
-    this.setState({
-      openActiveItem: false,
-      activeItemIndex: null
-    });
+    localStorage.setItem('currentGame',  (e.target.dataset.index - 1));
   }
 
   render() {
-    const {openActiveItem, activeItemIndex} = this.state;
-
-    if (openActiveItem === false) {
       return (
-        <div className='app'>
-          <GridTitle data={Data} />
-          <GridView data={Data} handleItem={this.handleItemClick}/>
-        </div>
+        <Router>
+          <div className='app'>
+            <Switch>
+              <Route exact path="/" render={props => <GridView data={Data} handleItem={this.handleItemClick} {...props} />} />
+              <Route path="/activeGame/:id" render={props => <ActiveItemView data={Data}  handleItemClick={this.closeActiveView} {...props} />} />
+            </Switch>
+          </div>
+        </Router>
       );
-    }
-
-    if (openActiveItem) {
-      return (
-        <div className='app'>
-          <ActiveItemView data={Data} activeItemIndex={activeItemIndex} handleItemClick={this.closeActiveView} />
-        </div>
-      );
-    }
   }
 }
 

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
     class GameItem extends Component {
       
@@ -11,13 +12,17 @@ import React, { Component } from 'react';
             const {image, title, id} = this.props;
             return (
                 <div className={`game game-item${id}`} onClick={this.clickEventViewHandler} data-index={id}>
-                    <img 
-                        className='item game-item-thumnnail'
-                        data-index={id}
-                        alt='game thumbnail'
-                        draggable='false'
-                        src={image} />
-                    <h3 className='game-item-name' data-index={id}>{title}</h3>
+                    <Link to={`/activeGame/${id}`}>
+                        <img 
+                            className='item game-item-thumbnail'
+                            data-index={id}
+                            alt='game thumbnail'
+                            draggable='false'
+                            src={image} />
+                    </Link>
+                    <Link to={`/activeGame/${id}`}>
+                        <h3 className='game-item-name' data-index={id}>{title}</h3>
+                    </Link>
                 </div>
             );
         }
